@@ -1,61 +1,80 @@
-
+import java.util.ArrayList;
 public class TicTacToeBoard
 	{
-	String Marker;
-	int Value;
-	static String [][] layout;
-	static String noMarker = "";
-	static int noValue = 0;
+	private String marker;
+	private int value;
+	static String board;
+	
 	
 	public TicTacToeBoard(String m, int v)
 		{
-		Marker = m;
-		Value = v;
+		marker = m;
+		value = v;
 		
 		}
 	
 		public String getMarker()
 			{
-			return Marker;
+			return marker;
 			}
 		public int getValue()
 			{
-			return Value;
+			return value;
 			}
 		public void setMarker()
 			{
-			this.Marker = Marker;
+			this.marker = marker;
 			}
 		public void setValue()
 			{
-			this.Value = Value;
+			this.value = value;
 			}
 		
 		
-		public static void makeLayout()
+		public static void fillBoard()
 		{
-			TicTacToeBoard[][] layout = new TicTacToeBoard [3][3];
+		ArrayList<TicTacToeBoard> board = new ArrayList <TicTacToeBoard>();	
 			for(int i = 0; i < 3; i++)
 				{
 				for(int j = 0; j < 3; j++)
 					{
-					layout.add(new TicTacToeBoard("noMarker", noValue ));
+					board.add(new TicTacToeBoard("", 0 ));
 					}
 					
 				}
 		}
 	public static void makeBoard()
 		{
-		TicTacToeBoard [][] board = new TicTacToeBoard [3][3];
-		System.out.println("       1       2       3");
-		System.out.println("------------------------");
-		System.out.println("A | " + layout[0][0] + "|" + layout [0][1] + "|" + layout[0][2] + "|"  );
-		System.out.println("------------------------");
-		System.out.println("B | " + layout[1][0] + "|" + layout[1][1] + "|" + layout[1][2] + "|"  );
-		System.out.println("------------------------");
-		System.out.println("C | " + layout[2][0] + "|" + layout[2][1] + "|" +  layout[2][2] + "|"  );
-		System.out.println("------------------------");
+		TicTacToeBoard  board[][] = new TicTacToeBoard [3][3];
+		
 		System.out.println();
+		System.out.println("     1     2    3");
+		System.out.println("  -----------------");
+		System.out.println("A | " + board[0][0] + "|" + board[0][1] + "|" + board[0][2] + "|"  );
+		System.out.println("  -----------------");
+		System.out.println("B | " + board[1][0] + "|" + board[1][1] + "|" + board[1][2] + "|"  );
+		System.out.println("  -----------------");
+		System.out.println("C | " + board[2][0] + "|" + board[2][1] + "|" +  board[2][2] + "|"  );
+		System.out.println("  -----------------");
+		System.out.println();
+		}
+	
+	public static void isMoveValid()
+		{
+		if(!TicTacToeBoard.board.equals(0))
+			{
+			System.out.println();
+			}
+		else
+			{
+			System.out.println("You cannot play that  move");
+			TicTacToePlayer.addPlayerMove();
+			}
+		}
+	
+	public static void isGameOver()
+		{
+		if()
 		}
 	
 	}
