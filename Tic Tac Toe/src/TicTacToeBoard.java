@@ -39,7 +39,7 @@ public class TicTacToeBoard
 				{
 				for(int j = 0; j < 3; j++)
 					{
-					layout.add(noMarker, noValue);
+					layout.add(new TicTacToeBoard("noMarker", noValue ));
 					}
 					
 				}
