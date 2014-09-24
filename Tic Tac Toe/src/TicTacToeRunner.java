@@ -14,10 +14,15 @@ public class TicTacToeRunner
 		
 		while(!TicTacToeBoard.isGameOver())
 			TicTacToePlayer.addPlayerMove();
-			TicTacToeBoard.makeBoard();
 			TicTacToeBoard.isMoveValid();
+			TicTacToeBoard.isBoardFull();
+			TicTacToeBoard.makeBoard();
+			
 			TicTacToeComputer.computerMove();
-			//TicTacToeBoard.isGameOver();
+			TicTacToeBoard.board[TicTacToePlayer.row][TicTacToePlayer.column] = TicTacToePlayer.computerMarker;
+			TicTacToeBoard.isMoveValid();
+			TicTacToeBoard.isBoardFull();
+			TicTacToeBoard.makeBoard();
 			TicTacToePlayer.sayGoodbye();
 		}
 

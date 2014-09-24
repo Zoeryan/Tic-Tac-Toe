@@ -57,29 +57,60 @@ public class TicTacToeBoard
 		System.out.println("  -------------");
 		System.out.println();
 		}
-	
-	public static void isMoveValid()
+
+	public static boolean isMoveValid()
 		{
-		if(TicTacToeBoard.board[0] = 0)
+		if(!TicTacToeBoard.board[TicTacToePlayer.row][TicTacToePlayer.column].equals(" "))
 			{
 			System.out.println();
+			return true;
 			}
 		else
 			{
 			System.out.println("You cannot play that  move");
 			TicTacToePlayer.addPlayerMove();
+			return false;
 			}
 		}
 	
 	public static boolean isGameOver()
+	{
 		{
-		if(TicTacToeBoard.board[TicTacToePlayer.row][TicTacToePlayer.column])
-			{
-			return(true);
+			if ((board[0][0].equals(board[0][1]) && board[0][1].equals(board[0][2]) && !board[0][1].equals(" ")) ||
+				(board[1][0].equals(board[1][1]) && board[1][1].equals(board[1][2]) && !board[1][1].equals(" ")) ||
+				(board[2][0].equals(board[2][1]) && board[2][1].equals(board[2][2]) && !board[2][1].equals(" ")) ||
+				(board[0][0].equals(board[1][0]) && board[1][0].equals(board[2][0]) && !board[1][0].equals(" ")) ||				
+				(board[0][1].equals(board[1][1]) && board[1][1].equals(board[1][2]) && !board[1][1].equals(" ")) ||
+				(board[0][2].equals(board[1][2]) && board[1][2].equals(board[2][2]) && !board[1][2].equals(" ")) ||
+				(board[0][0].equals(board[1][1]) && board[1][1].equals(board[2][2]) && !board[1][1].equals(" ")) ||
+				(board[0][2].equals(board[1][1]) && board[1][1].equals(board[2][0]) && !board[1][1].equals(" ")))
+				{
+				System.out.println("The game is over!");
+				return true;
+				}
+			return false;
 			}
-		else
-			return(false);
-		}
 	
+	}
+	// BOOLEAN??
+	public static boolean isBoardFull()
+	{
+		boolean isFull = true;
+		
+		for(int i = 0; i < 3; i++)
+		{
+			for(int j = 0; j < 3; j++)
+			if (TicTacToeBoard.board[i][j] == "X" || TicTacToeBoard.board[i][j] == "O"  )
+			{
+				System.out.println("Looks like this game is a tie!");
+				return true;
+			}
+			
+			else
+				{
+				return false;
+				}
+		}
+	}
 	
 	}

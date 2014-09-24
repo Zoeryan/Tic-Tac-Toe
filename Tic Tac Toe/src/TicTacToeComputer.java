@@ -1,24 +1,23 @@
 import java.lang.Math;
 
 public class TicTacToeComputer {
-	int anyRow;
-	int anyColumn;
+	static int anyRow;
+	static int anyColumn;
 	
 	public static void computerMove()
 	{
+		do
+		{
+		double randomNumber1 = Math.random();
+		anyRow = (int) ((randomNumber1 * 10) %3);
+		double randomNumber2 = Math.random();
+		anyColumn = (int) ((randomNumber2 * 10) %3);	
 
-	do
-		{
-		double randomNumberOne = Math.random();
-		anyRow = (int)(randomNumberOne* 10)%3;
-		double randomNumberTwo = Math.random();
-		anyColumn = (int)(randomNumberTwo*10)%3;
+		TicTacToePlayer.column = anyColumn;
+		TicTacToePlayer.row = anyRow;
+		TicTacToeBoard.isMoveValid();
 		}
-	
-	while
-		{
-		TicTacToeBoard.isMoveValid = true;
-		}
+	while (TicTacToeBoard.isMoveValid());
 	}
 
 }
