@@ -42,12 +42,12 @@ public class TicTacToeBoard
 					
 				}
 		}
-	public static void makeBoard()
+	public static void displayBoard()
 		{
 		
 		
 		System.out.println();
-		System.out.println("     1     2    3");
+		System.out.println("    1   2   3");
 		System.out.println("  -------------");
 		System.out.println("A |" + "  "  + board[0][0] + "|" + "  " + board[0][1] + "|" + "  "+ board[0][2] + "|"  );
 		System.out.println("  -------------");
@@ -58,20 +58,6 @@ public class TicTacToeBoard
 		System.out.println();
 		}
 
-	public static boolean isMoveValid()
-		{
-		if(!TicTacToeBoard.board[TicTacToePlayer.row][TicTacToePlayer.column].equals(" "))
-			{
-			System.out.println();
-			return true;
-			}
-		else
-			{
-			System.out.println("You cannot play that  move");
-			TicTacToePlayer.addPlayerMove();
-			return false;
-			}
-		}
 	
 	public static boolean isGameOver()
 	{
@@ -89,28 +75,26 @@ public class TicTacToeBoard
 				return true;
 				}
 			return false;
-			}
-	
-	}
-	// BOOLEAN??
-	public static boolean isBoardFull()
-	{
-		boolean isFull = true;
-		
-		for(int i = 0; i < 3; i++)
-		{
-			for(int j = 0; j < 3; j++)
-			if (TicTacToeBoard.board[i][j] == "X" || TicTacToeBoard.board[i][j] == "O"  )
-			{
-				System.out.println("Looks like this game is a tie!");
-				return true;
-			}
-			
-			else
-				{
-				return false;
-				}
 		}
+	
+	
+
+//	public static boolean isBoardFull()
+//	{
+//		boolean isFull = true;
+//		
+//		for(int i = 0; i < 3; i++)
+//		{
+//			for(int j = 0; j < 3; j++)
+//			if (TicTacToeBoard.board[i][j] == "X" || TicTacToeBoard.board[i][j] == "O"  )
+//			{
+//				System.out.println("Looks like this game is a tie!");
+//				return true;
+//			}
+//			
+//		
+//		}
+//		return false;
 	}
 	
 	}

@@ -6,7 +6,6 @@ public class TicTacToeComputer {
 	
 	public static void computerMove()
 	{
-		do
 		{
 		double randomNumber1 = Math.random();
 		anyRow = (int) ((randomNumber1 * 10) %3);
@@ -15,9 +14,8 @@ public class TicTacToeComputer {
 
 		TicTacToePlayer.column = anyColumn;
 		TicTacToePlayer.row = anyRow;
-		TicTacToeBoard.isMoveValid();
+		System.out.println("Here is my move!");
 		}
-	while (TicTacToeBoard.isMoveValid());
-	}
 
+	}
 }

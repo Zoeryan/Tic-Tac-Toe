@@ -10,20 +10,20 @@ public class TicTacToeRunner
 		TicTacToePlayer.greetPlayer();
 		TicTacToePlayer.pickMarker();
 		TicTacToeBoard.fillBoard();
-		TicTacToeBoard.makeBoard();
+		TicTacToeBoard.displayBoard();
 		
-		while(!TicTacToeBoard.isGameOver())
+		while(!TicTacToeBoard.isGameOver()) //&& !TicTacToeBoard.isBoardFull())
+			{
 			TicTacToePlayer.addPlayerMove();
-			TicTacToeBoard.isMoveValid();
-			TicTacToeBoard.isBoardFull();
-			TicTacToeBoard.makeBoard();
+			TicTacToeBoard.board[TicTacToePlayer.row][TicTacToePlayer.column] = TicTacToePlayer.playerMarker;
+			TicTacToeBoard.displayBoard();
 			
 			TicTacToeComputer.computerMove();
 			TicTacToeBoard.board[TicTacToePlayer.row][TicTacToePlayer.column] = TicTacToePlayer.computerMarker;
-			TicTacToeBoard.isMoveValid();
-			TicTacToeBoard.isBoardFull();
-			TicTacToeBoard.makeBoard();
+			TicTacToeBoard.displayBoard();
+			}
 			TicTacToePlayer.sayGoodbye();
+			
 		}
 
 	}
