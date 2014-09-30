@@ -76,25 +76,33 @@ public class TicTacToeBoard
 				}
 			return false;
 		}
-	
-	
-
-//	public static boolean isBoardFull()
-//	{
-//		boolean isFull = true;
-//		
-//		for(int i = 0; i < 3; i++)
-//		{
-//			for(int j = 0; j < 3; j++)
-//			if (TicTacToeBoard.board[i][j] == "X" || TicTacToeBoard.board[i][j] == "O"  )
-//			{
-//				System.out.println("Looks like this game is a tie!");
-//				return true;
-//			}
-//			
-//		
-//		}
-//		return false;
 	}
 	
+		 public static boolean isDraw() 
+			 {
+	      for (int row = 0; row < 3; row++) 
+	    	  {
+	         for (int column = 0; column < 3; column++) 
+	        	 {
+	            if (board[TicTacToePlayer.row][TicTacToePlayer.column].equals("  ")) 
+	            	{
+	               return false;  
+	            	}
+	        	 }
+	    	  }
+	      return true;
+			 }
+		 
+		 public static boolean isMoveValid()
+		 	{
+			if(!TicTacToeBoard.board[TicTacToePlayer.row][TicTacToePlayer.column].equals("  "))
+				{
+					return true;
+				}
+				
+		 		else
+
+					return false;
+		 	}
+		 
 	}

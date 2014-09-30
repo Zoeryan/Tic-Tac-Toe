@@ -35,7 +35,8 @@ static String computerMarker;
 		}
 	public static void addPlayerMove()
 	{
-	
+		do
+			{
 			System.out.println("Please enter the coordinates of your move. (ex. B1)");
 			Scanner keyboard = new Scanner(System.in);
 			move = keyboard.nextLine();
@@ -58,7 +59,9 @@ static String computerMarker;
 				column= Integer.parseInt(move.substring(1)) - 1;
 				TicTacToeBoard.board[row][column] = playerMarker;
 				TicTacToeBoard.board[TicTacToePlayer.row][TicTacToePlayer.column] = TicTacToePlayer.playerMarker;
-
+			}
+		while(TicTacToeBoard.isMoveValid());
+			
 	}
 
 
